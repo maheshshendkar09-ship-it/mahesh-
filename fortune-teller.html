@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fortune Teller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7e7ce;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        #fortune-box {
+            background: #fffbe0;
+            padding: 32px 48px;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        #fortune {
+            margin-top: 24px;
+            font-size: 1.3em;
+            color: #964B00;
+            min-height: 40px;
+        }
+        button {
+            background: #964B00;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #7b3a11;
+        }
+    </style>
+</head>
+<body>
+    <div id="fortune-box">
+        <h2>🔮 Fortune Teller 🔮</h2>
+        <button onclick="tellFortune()">Reveal my Fortune!</button>
+        <div id="fortune"></div>
+    </div>
+    <script>
+        const fortunes = [
+            "You will have a great day!",
+            "A pleasant surprise awaits you.",
+            "Opportunities will soon knock on your door.",
+            "You will meet someone special.",
+            "Embrace change, it is coming.",
+            "Trust your instincts today.",
+            "Be patient; good things are on their way.",
+            "Unexpected wealth is in your future.",
+            "Take time to relax and recharge.",
+            "Happiness is within your reach."
+        ];
+
+        function tellFortune() {
+            const fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+            document.getElementById("fortune").textContent = fortune;
+        }
+    </script>
+</body>
+</html>
